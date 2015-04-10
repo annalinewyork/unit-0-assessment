@@ -17,44 +17,84 @@ public class Unit0Tests {
     }
 
     public static void printHelloWorld() {
-      System.out.println("");
+      System.out.println("Hello world");
     }
 
-    public static Object returnPrimitiveBooleanTrue() {
-      return null;
-    }
-
-    public static Object returnPrimitiveInt1729() {
-      return null;
-    }
-
-    public static Object returnPrimitiveDoubleThreePointOneFour() {
-      return null;
-    }
-
-    public static Object returnPrimitiveCharZ() {
+    public static boolean returnPrimitiveBooleanTrue() {
+        int x = 1;
+        int y = 1;
+        if (x == y) {
+            return true;
+        }
         return false;
     }
 
+    public static int returnPrimitiveInt1729() {
+      return 1729;
+    }
+
+    public static double returnPrimitiveDoubleThreePointOneFour() {
+
+        return 3.14;
+    }
+
+    public static char returnPrimitiveCharZ(char x) {
+        x = 'Z';
+        return x;
+
+        }
+
     public static void printSumOf1Upto10UsingForLoop() {
+        int i;
+        int sum=0;
+        for (i=0; i<=10; i++){
+            System.out.println(sum+i);
+        }
     }
 
     public static void printSumOf1Upto10000UsingForLoop() {
+        int i;
+        int sum =0;
+        for (i=0; i<=10000; i++){
+            System.out.println(sum+i);
+        }
     }
 
     public static boolean isOdd(int n) {
-      return false;
+        n=3;
+        if (n % 2 == 0){]
+            return true;
+        }
+        return false;
     }
 
     public static boolean isMultipleOfThree(int n) {
-      return false;
+        n = 5;
+        if (n % 3 == 0){
+            return true;
+        }
+        return false;
     }
 
     public static boolean isOddAndIsMultipleOfThree(int n) {
+        n = 11;
+        if (n %2 == 0 && n % 3 == 0){
+            return true;
+        }
       return false;
     }
 
     public static String repeatStringXTimes(String input, int times) {
+        input = "patato";
+        times = 5;
+
+        for (int i = 0; i<times; i++){
+           // System.out.println(input+=i);
+            return (input+=i);
+        }
+        if (times<0){
+            return " ";
+        }
         // Given string "input" and a positive integer "times",
         // return a string that is equal to the input string repeated X times.
         // If "times" is 0 negative, return a blank string.
@@ -63,6 +103,8 @@ public class Unit0Tests {
     }
 
     public static String returnStringUntilQ(String input) {
+        input = "applepieq";
+
         // Given string "input", return a string that stops at the first occurrence of the character 'q'.
         // For example, given the string "ubiquitous", return "ubi".
         // If the string does not contain a q, then return the empty string "".
