@@ -11,127 +11,158 @@ public class Unit0Tests {
      * Some of these methods require that the method return signature change.
      * For example, `returnPrimitiveBooleanTrue()` should return `boolean`, not `Object`.
      */
-    public static void main (String args[]) {
-      // Use main to test your methods
-      printHelloWorld();
+    public static void main(String args[]) {
+        // Use main to test your methods
+        printHelloWorld();
+        System.out.println(returnPrimitiveBooleanTrue());
+        System.out.println(returnPrimitiveInt1729());
+        System.out.println(returnPrimitiveDoubleThreePointOneFour());
+        System.out.println(returnPrimitiveCharZ());
+        isOdd(6);
+        isMultipleOfThree(9);
+        isOddAndIsMultipleOfThree(12);
+        returnStringUntilQ("ubiquitous");
     }
 
     public static void printHelloWorld() {
-      System.out.println("Hello world");
+
+        System.out.println("Hello World");
     }
 
     public static boolean returnPrimitiveBooleanTrue() {
-        int x = 1;
-        int y = 1;
-        if (x == y) {
-            return true;
-        }
-        return false;
+        boolean answer = 7 > 3;
+        return answer;
     }
 
     public static int returnPrimitiveInt1729() {
-      return 1729;
+        return 1729;
     }
 
     public static double returnPrimitiveDoubleThreePointOneFour() {
-
         return 3.14;
     }
 
-    public static char returnPrimitiveCharZ(char x) {
-        x = 'Z';
-        return x;
+    public static char returnPrimitiveCharZ() {
+        return 'Z';
 
-        }
+    }
 
     public static void printSumOf1Upto10UsingForLoop() {
         int i;
-        int sum=0;
-        for (i=0; i<=10; i++){
-            System.out.println(sum+i);
+        int sum = 0;
+        for (i = 1; i < 10; i++) {
+            sum = sum + i;
         }
+        System.out.println(sum);
     }
 
     public static void printSumOf1Upto10000UsingForLoop() {
         int i;
-        int sum =0;
-        for (i=0; i<=10000; i++){
-            System.out.println(sum+i);
+        int sum = 0;
+        for (i = 1; i < 10000; i++) {
+            sum = sum + i;
         }
+        System.out.println(sum);
     }
 
     public static boolean isOdd(int n) {
-        n=3;
-        if (n % 2 == 0){]
+        if (n % 2 == 0) {
+            return false;
+        } else
             return true;
-        }
-        return false;
     }
 
     public static boolean isMultipleOfThree(int n) {
-        n = 5;
-        if (n % 3 == 0){
+        if (n % 3 == 0) {
             return true;
         }
         return false;
     }
 
     public static boolean isOddAndIsMultipleOfThree(int n) {
-        n = 11;
-        if (n %2 == 0 && n % 3 == 0){
+
+        if (n % 2 != 0 && n % 3 == 0) {
             return true;
-        }
-      return false;
+        } else
+
+            return false;
     }
 
     public static String repeatStringXTimes(String input, int times) {
-        input = "patato";
-        times = 5;
 
-        for (int i = 0; i<times; i++){
-           // System.out.println(input+=i);
-            return (input+=i);
-        }
-        if (times<0){
-            return " ";
+        String result = "";
+        for (int i = 0; i < times; i++) {
+            if (times >= 1) {
+                result = result + input;
+                System.out.print(result);
+            } else if (times <= 0) {
+                System.out.println(" ");
+            }
         }
         // Given string "input" and a positive integer "times",
         // return a string that is equal to the input string repeated X times.
         // If "times" is 0 negative, return a blank string.
         // For example, repeatStringXTimes("potato", 5) should return "potatopotatopotatopotatopotato".
-        return "";
+        return result;
     }
 
     public static String returnStringUntilQ(String input) {
-        input = "applepieq";
+
+        char target = 'q';
+        String result = "";
+        for (int i=0; i<input.length(); i++){
+            char findChar = input.charAt(i);
+            if (findChar==target){
+                return input.substring(0,i);
+            }
+        }
 
         // Given string "input", return a string that stops at the first occurrence of the character 'q'.
         // For example, given the string "ubiquitous", return "ubi".
         // If the string does not contain a q, then return the empty string "".
-        return "";
+        return result;
     }
 
     public static Person declareAndReturnPersonNamedAda() {
-      return null;
+        Person a = new Person ("Ada");
+        a.setCity("NewYork");
+        return a;
     }
 
     public static Person declareAndReturnPersonNamedAlanTuringFromLondon() {
-      return null;
+        Person b = new Person();
+        b.setName("Alan Turing");
+        b.setCity("London");
+        return b;
     }
 
     public static boolean isFromLondon(Person person) {
-      return false;
-    }
+
+        //Person P1 = declareAndReturnPersonNamedAda();
+        //if (!a.getCity().equals(null)) {
+            if (declareAndReturnPersonNamedAda().getCity().equals("London")) {
+                return true;
+            } else
+                return false;
+        }
+       // return false;
+   // }
 
     public static ArrayList<Place> declareAndReturnArrayListOfThreePlaces() {
-        return null;
+        ArrayList places = new ArrayList();
+
+        places.add("NewYork");
+        places.add("London");
+        places.add("Beijing");
+
+        return places;
     }
 
     public static HashMap<String, Person> declareAndReturnHashmapOfAlanTuringAndGraceHopper() {
-      // The HashMap should have key-value pairs of:
-      // - key: `Alan Turing`, value: instance of Person with name `Alan Turing`
-      // - key: `Grace Hopper`, value: instance of Person with name `Grace Hopper`
-      return null;
+        // The HashMap should have key-value pairs of:
+        // - key: `Alan Turing`, value: instance of Person with name `Alan Turing`
+        // - key: `Grace Hopper`, value: instance of Person with name `Grace Hopper`
+        return null;
     }
 
     public static void changeTuringsCityToPrinceton(HashMap<String, Person> people) {
