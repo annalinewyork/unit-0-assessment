@@ -110,10 +110,10 @@ public class Unit0Tests {
 
         char target = 'q';
         String result = "";
-        for (int i=0; i<input.length(); i++){
+        for (int i = 0; i < input.length(); i++) {
             char findChar = input.charAt(i);
-            if (findChar==target){
-                return input.substring(0,i);
+            if (findChar == target) {
+                return input.substring(0, i);
             }
         }
 
@@ -124,7 +124,7 @@ public class Unit0Tests {
     }
 
     public static Person declareAndReturnPersonNamedAda() {
-        Person a = new Person ("Ada");
+        Person a = new Person("Ada");
         a.setCity("NewYork");
         return a;
     }
@@ -137,35 +137,49 @@ public class Unit0Tests {
     }
 
     public static boolean isFromLondon(Person person) {
+        return (person.getCity().equals("London"));
 
-        //Person P1 = declareAndReturnPersonNamedAda();
-        //if (!a.getCity().equals(null)) {
-            if (declareAndReturnPersonNamedAda().getCity().equals("London")) {
-                return true;
-            } else
-                return false;
-        }
-       // return false;
-   // }
+    }
+
 
     public static ArrayList<Place> declareAndReturnArrayListOfThreePlaces() {
-        ArrayList places = new ArrayList();
+        Place p1 = new Place();
+        Place p2 = new Place();
+        Place p3 = new Place();
 
-        places.add("NewYork");
-        places.add("London");
-        places.add("Beijing");
+        p1.setName("NewYork");
+        p2.setName("Qingdao");
+        p3.setName("Beijing");
+
+        ArrayList <Place> places = new ArrayList<Place>();
+        places.add(p1);
+        places.add(p2);
+        places.add(p3);
 
         return places;
     }
 
     public static HashMap<String, Person> declareAndReturnHashmapOfAlanTuringAndGraceHopper() {
+
+        HashMap<String, Person> people = new HashMap<String, Person>();
+        Person alan = new Person("Alan Turing");
+        alan.setCity("London");
+        Person hopper = new Person("Grace Hopper");
+        hopper.setCity("Arlington");
+
+        people.put("Alan Turing", alan);
+        people.put("Grace Hopper",hopper);
+
+        return people;
+
         // The HashMap should have key-value pairs of:
         // - key: `Alan Turing`, value: instance of Person with name `Alan Turing`
         // - key: `Grace Hopper`, value: instance of Person with name `Grace Hopper`
-        return null;
     }
 
     public static void changeTuringsCityToPrinceton(HashMap<String, Person> people) {
+
+       people.get("Alan Turing").setCity("Princeton");
     }
 
     // Bonus Problems
